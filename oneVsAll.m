@@ -36,7 +36,9 @@ X = [ones(m, 1) X];
 %
 % Example Code for fmincg:
 %
-%     % Set Initial theta
+
+for c = 1:num_labels
+     % Set Initial theta
      initial_theta = zeros(n + 1, 1);
      
      % Set options for fminunc
@@ -49,6 +51,8 @@ X = [ones(m, 1) X];
                  initial_theta, options);
 
 
+    all_theta(c, :) = theta(:);
+end
 
 
 
